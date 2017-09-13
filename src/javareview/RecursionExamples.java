@@ -9,9 +9,34 @@ package javareview;
  * @author laveh2107
  */
 public class RecursionExamples {
+
+    /**
+     * Euclidean Algorithm find the GDC of any two numbers
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public int gcd(int a, int b) {
+        //swap numebr if a is lower than b
+        if (a < b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        //Check if we are done
+        if (b == 0) {
+            return a;
+        } else {
+            //find new variables for a and b
+            int r = a % b;
+            //Calculate new gcd
+            return gcd(b, r);
+        }
+    }
+
     //Returns the nth fibbonacci number 
     //n -  the nth number we want
-
     public int fibLoop(int n) {
 
         //array to store sequence
@@ -60,7 +85,10 @@ public class RecursionExamples {
         System.out.println("0th: " + boundR1);
         int boundR2 = test.fibR(1);
         System.out.println("1th: " + boundR2);
-        int normR = test.fibLoop(5);
+        int normR = test.fibR(5);
         System.out.println("5th: " + normR);
+        System.out.println("------- GCD ");
+        int boundgcd1 = test.gcd(1378, 24);
+        System.out.println("gcd(1378,24): " + boundgcd1);
     }
 }
