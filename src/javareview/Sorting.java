@@ -17,9 +17,9 @@ public class Sorting {
      */
     public static void main(String[] args) {
         Sorting test = new Sorting();
-        int[] number = new int[100];//
+        int[] number = new int[10];//
         for (int i = 0; i < number.length; i++) {
-            number[i] = (int) (Math.random() * (100 - 1) + 1);
+            number[i] = (int) (Math.random() * (10 - 1) + 1);
         }
 
 
@@ -125,5 +125,17 @@ public class Sorting {
                 bSpot++;
             }
         }
+    }
+
+    public int sequentialSearch(int[] array, int number) {
+        for (int i = 0; i < array.length; i++) {
+            //did i find it?
+            if (array[i] == number) {
+                return i;
+            }
+        }
+        //didnt find it
+        return -1;
+
     }
 }
