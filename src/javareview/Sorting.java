@@ -17,9 +17,9 @@ public class Sorting {
      */
     public static void main(String[] args) {
         Sorting test = new Sorting();
-        int[] number = new int[10];//
+        int[] number = new int[100];//
         for (int i = 0; i < number.length; i++) {
-            number[i] = (int) (Math.random() * (10 - 1) + 1);
+            number[i] = (int) (Math.random() * (100 - 1) + 1);
         }
 
 
@@ -34,6 +34,8 @@ public class Sorting {
         for (int i = 0; i < number.length; i++) {
             System.out.println(number[i]);
         }
+        
+        System.out.println(test.binarySearch(number, 36));
     }
 
     public void swap(int[] array, int p1, int p2) {
@@ -135,6 +137,26 @@ public class Sorting {
             }
         }
         //didnt find it
+        return -1;
+
+    }
+
+    //binary search
+    public int binarySearch(int[] array, int target) {
+        int min = 0;
+        int max = array.length - 1;
+        while (max >= min) {
+            int guess = (max + min) / 2;
+            //find it?
+            if (array[guess] == target) {
+                return guess;
+            } else if (target > array[guess]) {
+                min = guess + 1;
+            } else {
+                max = guess - 1;
+            }
+        }
+        //didn't find it
         return -1;
 
     }
