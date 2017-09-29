@@ -17,9 +17,9 @@ public class Sorting {
      */
     public static void main(String[] args) {
         Sorting test = new Sorting();
-        int[] number = new int[100];//
+        int[] number = new int[7];//
         for (int i = 0; i < number.length; i++) {
-            number[i] = (int) (Math.random() * (100 - 1) + 1);
+            number[i] = (int) (Math.random() * (7 - 1) + 1);
         }
 
 
@@ -35,7 +35,7 @@ public class Sorting {
             System.out.println(number[i]);
         }
         
-        System.out.println(test.binarySearch(number, 36));
+        System.out.println(test.binarySearch(number, 7));
     }
 
     public void swap(int[] array, int p1, int p2) {
@@ -75,7 +75,7 @@ public class Sorting {
         }
     }
 
-    public void insersionSort(int[] array) {
+    public void insertionSort(int[] array) {
         //start going through the array
         for (int i = 0; i < array.length; i++) {
             //store position
