@@ -17,9 +17,9 @@ public class Sorting {
      */
     public static void main(String[] args) {
         Sorting test = new Sorting();
-        int[] number = new int[7];//
+        int[] number = new int[10];//
         for (int i = 0; i < number.length; i++) {
-            number[i] = (int) (Math.random() * (7 - 1) + 1);
+            number[i] = (int) (Math.random() * (10 - 1) + 1);
         }
 
 
